@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gimnakatugampala/covid-tracker-srilanka/issues"
   },
-  "homepage": "https://github.com/gimnakatugampala/covid-tracker-srilanka#readme"
+  "homepage": "https://github.com/gimnakatugampala/covid-tracker-srilanka#readme",
+  "devDependencies": {
+    "sass": "^1.34.1"
+  }
 }
