@@ -32,7 +32,7 @@ function getTotalLocal(){
           'Yellow'
         ],
         datasets: [{
-          label: 'My First Dataset',
+          label: 'Total Srilankan Covid Cases',
           data: [300, 50, 100],
           backgroundColor: [
             'rgb(255, 99, 132)',

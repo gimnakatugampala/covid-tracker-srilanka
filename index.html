@@ -12,6 +12,15 @@
         body{
             font-family: 'Roboto Mono', monospace;
         }
+        .cases{
+            max-width: 1024px;
+            margin: auto;
+        }
+        .cases .bg-blue-600{
+            width: 40%;
+            display: inline-block;
+        }
+
     </style>
     <title>Covid Tracker | SriLanka</title>
 </head>
@@ -36,20 +45,52 @@
 </div>
 
 <!-- srilanka -->
-<div class="md:container md:mx-auto">
+<div class="cases mx-auto" >
     <h1 class="my-8 text-2xl">Sri Lanka Covid Cases</h1>
 
-    <div id="sl" class="flex">
-        <img src="./img/srilanka.png">
+    <div class="flex">
+        <img src="./img/srilanka.png" id="sl-img">
         <div id="chart-sl" class="inline" style="float: left;" >
             <canvas id="getTotal"></canvas>
             <canvas id="getDaily"></canvas>
         </div>
     </div>
+</div>
 
-    <div class="counter" data-target="15000">0</div>
-    <div class="counter" data-target="9000">0</div>
-    
+<div class="cases max-w-full">
+    <div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+        <div class="counter text-6xl" data-target="15000">0</div>
+        <h1>New Cases in Sri lanka</h1>
+    </div>
+
+     
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Total Cases in Sri lanka</h1>
+</div>
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Total Deaths in Sri Lanka</h1>
+</div>
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>New Deaths in Sri Lanka</h1>
+</div>
+
+ 
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Recovered in Sri Lanka</h1>
+</div>
+
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Active Cases in Sri Lanka</h1>
+</div>
+
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
