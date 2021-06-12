@@ -21,6 +21,10 @@
             display: inline-block;
         }
 
+        #sl-img{
+            width: 50%;
+        }
+
     </style>
     <title>Covid Tracker | SriLanka</title>
 </head>
@@ -89,6 +93,57 @@
 <div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
     <div class="counter text-6xl" data-target="15000">0</div>
     <h1>Active Cases in Sri Lanka</h1>
+</div>
+
+</div>
+
+
+
+<!-- world -->
+<div class="cases mx-auto" >
+    <h1 class="my-8 text-2xl">World Covid Cases</h1>
+
+    <div class="flex">
+        <img src="./img/world.jpg" id="sl-img">
+        <div id="chart-sl" class="inline" style="float: left;" >
+            <canvas id="getTotalWorld"></canvas>
+            <canvas id="getDailyWorld"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="cases max-w-full">
+    <div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+        <div class="counter text-6xl" data-target="15000">0</div>
+        <h1>New Cases in the World</h1>
+    </div>
+
+     
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Total Cases in the World</h1>
+</div>
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Total Deaths in the World</h1>
+</div>
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>New Deaths in the World</h1>
+</div>
+
+ 
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Recovered in the World</h1>
+</div>
+
+
+<div class="bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center">
+    <div class="counter text-6xl" data-target="15000">0</div>
+    <h1>Active Cases in the World</h1>
 </div>
 
 </div>
