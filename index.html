@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="main.scss">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <style>
         body{
@@ -38,11 +37,21 @@
 
 <!-- srilanka -->
 <div class="md:container md:mx-auto">
-    <h1>Sri Lanka Covid Cases</h1>
+    <h1 class="my-8 text-2xl">Sri Lanka Covid Cases</h1>
+
+    <div id="sl" class="flex">
+        <img src="./img/srilanka.png">
+        <div id="chart-sl">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="counter" data-target="15000">0</div>
+    <div class="counter" data-target="9000">0</div>
     
 </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./index.js"></script>
     <script src="./js/main.js"></script>
     

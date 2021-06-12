@@ -118,13 +118,45 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-// counter
-var genNumber = function genNumber() {
-  document.querySelector("#cases").style.setProperty("--percent", Math.random());
-};
+// Counter
+var counters = document.querySelectorAll('.counter');
+var speed = 200;
+counters.forEach(function (counter) {
+  var updateCount = function updateCount() {
+    var target = +counter.getAttribute('data-target');
+    var count = +counter.innerText;
+    var inc = target / speed;
+    console.log(inc);
 
-setInterval(genNumber, 2000);
-setTimeout(genNumber);
+    if (count < target) {
+      counter.innerText = count + inc;
+      setTimeout(updateCount, 1);
+    } else {
+      count.innerText = target;
+    }
+  };
+
+  updateCount();
+}); // Charts - local total chart
+
+function getTotalLocal() {
+  var data = {
+    labels: ['Red', 'Blue', 'Yellow'],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [300, 50, 100],
+      backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+      hoverOffset: 4
+    }]
+  };
+  var config = {
+    type: 'pie',
+    data: data
+  };
+  var myChart = new Chart(document.getElementById('myChart'), config);
+}
+
+getTotalLocal();
 },{}],"C:/Users/User/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
