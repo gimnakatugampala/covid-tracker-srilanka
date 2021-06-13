@@ -161,7 +161,7 @@ function getDailyLocal() {
   var data = {
     labels: ['Red', 'Blue', 'Yellow'],
     datasets: [{
-      label: 'My First Dataset',
+      label: 'Daily Sri Lankan Cases',
       data: [300, 50, 100],
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
       hoverOffset: 4
@@ -179,7 +179,7 @@ function getTotalWorld() {
   var data = {
     labels: ['Red', 'Blue', 'Yellow'],
     datasets: [{
-      label: 'My First Dataset',
+      label: 'Total World Cases',
       data: [300, 50, 100],
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
       hoverOffset: 4
@@ -196,7 +196,7 @@ function getDailyWorld() {
   var data = {
     labels: ['Red', 'Blue', 'Yellow'],
     datasets: [{
-      label: 'My First Dataset',
+      label: '',
       data: [300, 50, 100],
       backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
       hoverOffset: 4
@@ -241,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57410" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58336" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

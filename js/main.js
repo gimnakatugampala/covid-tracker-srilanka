@@ -65,7 +65,7 @@ function getDailyLocal(){
           'Yellow'
         ],
         datasets: [{
-          label: 'My First Dataset',
+          label: 'Daily Sri Lankan Cases',
           data: [300, 50, 100],
           backgroundColor: [
             'rgb(255, 99, 132)',
@@ -99,7 +99,7 @@ function getTotalWorld(){
           'Yellow'
         ],
         datasets: [{
-          label: 'My First Dataset',
+          label: 'Total World Cases',
           data: [300, 50, 100],
           backgroundColor: [
             'rgb(255, 99, 132)',
@@ -131,7 +131,7 @@ function getDailyWorld(){
           'Yellow'
         ],
         datasets: [{
-          label: 'My First Dataset',
+          label: '',
           data: [300, 50, 100],
           backgroundColor: [
             'rgb(255, 99, 132)',
@@ -159,3 +159,4 @@ getTotalLocal()
 getDailyLocal()
 getTotalWorld()
 getDailyWorld()
+
