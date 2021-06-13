@@ -118,26 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-// Counter
-var counters = document.querySelectorAll('.counter');
-var speed = 200;
-counters.forEach(function (counter) {
-  var updateCount = function updateCount() {
-    var target = +counter.getAttribute('data-target');
-    var count = +counter.innerText;
-    var inc = target / speed;
-    console.log(inc);
-
-    if (count < target) {
-      counter.innerText = count + inc;
-      setTimeout(updateCount, 1);
-    } else {
-      count.innerText = target;
-    }
-  };
-
-  updateCount();
-}); // Charts - local total chart
+var local = document.getElementById('local');
+var world = document.getElementById('world'); // Charts - local total chart
 
 function getTotalLocal() {
   var data = {
@@ -213,6 +195,41 @@ getTotalLocal();
 getDailyLocal();
 getTotalWorld();
 getDailyWorld();
+fetch('https://www.hpb.health.gov.lk/api/get-current-statistical').then(function (res) {
+  return res.json();
+}).then(function (data) {
+  uiLocal(data.data);
+  uiWorld(data.data);
+  console.log(data.data);
+}); // Local
+
+function uiLocal(data) {
+  local.innerHTML = "\n            <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n            <div class=\"counter text-6xl\" data-target=\"3000\">".concat(data.local_new_cases, "</div>\n            <h1>New Cases in Sri lanka</h1>\n          </div>\n    \n    \n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"").concat(data.local_total_cases, "\">").concat(data.local_total_cases, "</div>\n          <h1>Total Cases in Sri lanka</h1>\n          </div>\n    \n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"").concat(data.local_deaths, "\">").concat(data.local_deaths, "</div>\n          <h1>Total Deaths in Sri Lanka</h1>\n          </div>\n    \n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"").concat(data.local_new_deaths, "\">").concat(data.local_new_deaths, "</div>\n          <h1>New Deaths in Sri Lanka</h1>\n          </div>\n    \n    \n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"").concat(data.local_recovered, "\">").concat(data.local_recovered, "</div>\n          <h1>Recovered in Sri Lanka</h1>\n          </div>\n    \n    \n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"").concat(data.local_active_cases, "\">").concat(data.local_active_cases, "</div>\n          <h1>Active Cases in Sri Lanka</h1>\n          </div>\n      \n      ");
+}
+
+function uiWorld(data) {
+  world.innerHTML = "\n\n          <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n          <div class=\"counter text-6xl\" data-target=\"15000\">".concat(data.global_new_cases, "</div>\n          <h1>New Cases in the World</h1>\n      </div>\n\n      \n    <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n      <div class=\"counter text-6xl\" data-target=\"15000\">").concat(data.global_total_cases, "</div>\n      <h1>Total Cases in the World</h1>\n    </div>\n\n    <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n      <div class=\"counter text-6xl\" data-target=\"15000\">").concat(data.global_deaths, "</div>\n      <h1>Total Deaths in the World</h1>\n    </div>\n\n    <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n      <div class=\"counter text-6xl\" data-target=\"15000\">").concat(data.global_new_deaths, "</div>\n      <h1>New Deaths in the World</h1>\n    </div>\n\n\n    <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n      <div class=\"counter text-6xl\" data-target=\"15000\">").concat(data.global_recovered, "</div>\n      <h1>Recovered in the World</h1>\n    </div>\n\n\n    <div class=\"bg-blue-600 hover:bg-blue-400 bg-opacity-100 text-white rounded p-12 m-7 text-center\">\n      <div class=\"counter text-6xl\" data-target=\"15000\">").concat(data.local_active_cases, "</div>\n      <h1>Active Cases in the World</h1>\n    </div>\n      \n      \n      \n      ");
+} // Counter
+
+
+var counters = document.querySelectorAll('.counter');
+var speed = 200;
+counters.forEach(function (counter) {
+  var updateCount = function updateCount() {
+    var target = +counter.getAttribute('data-target');
+    var count = +counter.innerText;
+    var inc = target / speed; // console.log(inc);
+
+    if (count < target) {
+      counter.innerText = count + inc;
+      setTimeout(updateCount, 1);
+    } else {
+      count.innerText = target;
+    }
+  };
+
+  updateCount();
+});
 },{}],"C:/Users/User/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
